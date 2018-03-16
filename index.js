@@ -6,6 +6,7 @@ module.exports = {
 }
 
 var operate = require('./src/operations');
+var strings_filter = require('./src/filter_string');
 
 // Prototypes
 Array.prototype.where = function(string) {
@@ -13,7 +14,7 @@ Array.prototype.where = function(string) {
 
   var splits = string.split(' ');
 
-  console.log(splits);
+  console.log(strings_filter.operations(string));
 
   for (var i = 0; i < this.length; i++) {
     if (operate[splits[1]](this[i][splits[0]], splits[2])) {

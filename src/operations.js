@@ -25,10 +25,6 @@ module.exports = {
     return i == j;
   },
 
-  '===': function(i, j) {
-    return i === j;
-  },
-
   '!=': function(i, j) {
     return i != j;
   }
