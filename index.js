@@ -14,7 +14,7 @@ Array.prototype.where = function(string) {
 
   var splits = string.split(' ');
 
-  console.log(strings_filter.operations(string));
+  console.log(strings_filter.string_format(splits[2]));
 
   for (var i = 0; i < this.length; i++) {
     if (operate[splits[1]](this[i][splits[0]], splits[2])) {

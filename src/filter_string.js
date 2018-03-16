@@ -15,6 +15,7 @@ module.exports = {
     var count = 0;
     ops[count] = [];
 
+    // loop through all the splits and check if the contain a conjuction
     for (var i = 0; i < str.length; i++) {
       if (conjuctions.includes(str[i])) {
         ops[count] = ops[count].join(' ');
@@ -30,7 +31,27 @@ module.exports = {
     return ops;
   },
 
+
+  // This method will return the number of operations on a string
   number_operations: function(string) {
     return this.operations(string).length;
+  },
+
+
+
+
+  // This method will format a string so is readable
+  string_format: function(string) {
+    return string.split(/[\s'\s"]/).join('');
+  },
+
+
+
+  // This method will format an operation to make it readable
+  operation_format: function(string) {
+    splits = string.split(" ");
+
+    // TODO add logic
+
   }
 }
