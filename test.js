@@ -14,4 +14,4 @@ array = [
   }
 ];
 
-console.log(array.where("letter <= 1"));
+console.log(array.where("dog != doggy"));
