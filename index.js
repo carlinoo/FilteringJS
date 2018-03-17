@@ -12,9 +12,15 @@ var strings_filter = require('./src/filter_string');
 Array.prototype.where = function(string) {
   var array = [];
 
-  var splits = string.split(' ');
+  // Get all the operations separated by conjuctions
+  var operations = strings_filter.operations(string);
 
-  console.log(strings_filter.string_format(splits[2]));
+  // Format each operations so that it is readable
+  for (var i = 0; i < operations.length; i++) {
+    operations[i] = strings_filter.operation_format(operations[i]);
+  }
+
+  console.log(operations);
 
   for (var i = 0; i < this.length; i++) {
     if (operate[splits[1]](this[i][splits[0]], splits[2])) {

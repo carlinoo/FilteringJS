@@ -14,6 +14,6 @@ array = [
   }
 ];
 
-array.where("dog != 'doggy'");
+array.where("(dog != 'doggy') && meth == true");
 
 // console.log(array.where("dog != doggy"));
