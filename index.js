@@ -20,7 +20,8 @@ Array.prototype.where = function(string) {
     operations[i] = strings_filter.operation_format(operations[i]);
   }
 
-  console.log(operations);
+  var splits = operations;
+  console.log(splits);
 
   for (var i = 0; i < this.length; i++) {
     if (operate[splits[1]](this[i][splits[0]], splits[2])) {
