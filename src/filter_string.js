@@ -43,6 +43,10 @@ module.exports = {
 
   // This method will format a string so is readable
   string_format: function(string) {
+    if (typeof(string) != "string") {
+      return string;
+    }
+    
     return string.split(/[\s'\s"]/).join('');
   },
 
