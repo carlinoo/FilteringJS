@@ -7,31 +7,26 @@ module.exports = {
 
 var operate = require('./src/operations');
 var sf = require('./src/filter_string');
+var vr = require('./src/variables_replacement');
 
 // Prototypes
 Array.prototype.where = function(string) {
   var array = [];
 
-  // Get all the operations separated by conjuctions
-  var operations = sf.operations(string);
+  // Replace AND and OR to && and ||
+  string = sf.replace_symbols(string);
 
-  // Format each operations so that it is readable
-  for (var i = 0; i < operations.length; i++) {
-    operations[i] = sf.operation_format(operations[i]);
-  }
-
-  // console.log(sf.string_format(1));
-
-  var splits = operations[0];
+  string = vr.replace_variables(string, "this[i]");
 
   for (var i = 0; i < this.length; i++) {
 
-    var symbol = splits[1];
-    var variable = this[i][splits[0]];
-    var literal = sf.string_format(splits[2]);
+    // var symbol = splits[1];
+    // var variable = sf.stringify(this[i][splits[0]]);
+    // var literal = sf.stringify(sf.string_format(splits[2]));
 
     // Conditionals
-    if (operate[symbol](variable, literal)) {
+    // if (eval(variable + " " + symbol + " " + literal)) {
+    if (eval(string)) {
       array.push(this[i]);
     }
   }
