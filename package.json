@@ -1,5 +1,5 @@
 {
-  "name": "filter_js",
+  "name": "filtering_js",
   "version": "1.0.0",
   "description": "A small library to filter items in an array/object",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "FilterJS"
+    "url": "https://github.com/carlinoo/FilterJS"
   },
   "keywords": [
     "filter"
