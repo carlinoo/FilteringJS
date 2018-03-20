@@ -17,6 +17,7 @@ Array.prototype.where = function(string) {
   string = sf.replace_symbols(string);
 
   string = vr.replace_variables(string, "this[i]");
+  console.log(string);
 
   for (var i = 0; i < this.length; i++) {
 

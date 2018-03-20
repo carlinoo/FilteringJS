@@ -2,7 +2,10 @@ const a = require('./');
 array = [
   {
     letter: 2,
-    dog: 'cat'
+    dog: 'cat',
+    obj: {
+      meme: true
+    }
   },
   {
     letter: 1,
@@ -14,6 +17,6 @@ array = [
   }
 ];
 
-console.log(array.where("dog == 'doggy' AND dog == 'cat'"));
+console.log(array.where("dog == 'doggy' OR (dog == 'cat' AND obj.meme == true)"));
 
 // console.log(array.where("dog != doggy"));
