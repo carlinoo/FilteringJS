@@ -1,6 +1,6 @@
 {
   "name": "filtering_js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small library to filter items in an array in a SQL style",
   "main": "index.js",
   "scripts": {

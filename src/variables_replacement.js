@@ -25,7 +25,12 @@ module.exports = {
     // A variable is found if the next in the splits is an operation
     for (var i = 0; i < splits.length; i++) {
       if (operations.includes(splits[i])) {
-        splits[i - 1] = variable + "." + splits[i - 1];
+        // If the variable is called this, we don't want to change it then
+        if (splits[i - 1] != "this") {
+          splits[i - 1] = variable + "." + splits[i - 1];
+        } else {
+          splits[i - 1] = variable;
+        }
       }
     }
 

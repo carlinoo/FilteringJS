@@ -17,10 +17,10 @@ First of all you need to require the package:
 var filteringJS = require("filtering_js");
 ```
 
-Now, imagine we have an array like the following:
+Now, imagine we have two arrays like the following:
 
 ``` javascript
-array = [
+var array = [
   {
     number: 1,
     letter: 'a',
@@ -42,7 +42,10 @@ array = [
       hello: "x"
     }
   }
-]
+];
+
+var numbers = [1, 2, 3, 4, 5, 6];
+
 ```
 
 After this, you can apply cool fancy statements to your it such as:
@@ -62,6 +65,11 @@ var filtered = array.where("number == 1 OR obj.hello == 'z'");
 var filtered = array.where("number == 1 OR (letter == 'b')");
 
 // filtered = [ { number: 1, letter: 'a', obj: { hello: 'z' } }, { number: 2, letter: 'b', obj: { hello: 'y' } } ]
+
+var filtered = numbers.where("this > 2");
+
+//filtered = [ 3, 4, 5, 6 ]
+
 ```
 
 As you can see, you can apply very cool, nested conditions. This simple/light package will save you tons of time!
